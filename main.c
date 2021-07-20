@@ -11,27 +11,33 @@ typedef struct{
 double calculaPi(int);
 int selecionaQuantidade();
 void imprimePi(int);
+void apresentaInterface();
 ponto* gerarPonto(double, double);
 
 int main(void)
 {
-    printf("=============================================================\n");
-    printf(" Descubra o valor de PI segundo o método de Monte Carlo\n");
-    printf("=============================================================\n");
+    apresentaInterface();
     int n = selecionaQuantidade();
     imprimePi(n);
 
     return 0;
 }
 
-//valida pontos dentro do circuo e calculpa o valor aproximado de PI
+void apresentaInterface(){
+    printf("=============================================================\n");
+    printf(" Descubra o valor de PI segundo o método de Monte Carlo\n");
+    printf("=============================================================\n");
+}
+
+//valida pontos dentro do circuo e calcula o valor aproximado de PI
 double calculaPi(int n)
 {
     int i, insideCircle = 0;
-    //double x, y;
     ponto *pp;
+    //double x, y;
     double n1;
     double n2;
+
     srand(time(NULL));
    
     for (i = 0; i < n; i++)
@@ -63,7 +69,7 @@ int selecionaQuantidade()
 void imprimePi(int n)
 {
     double pi = calculaPi(n);
-    printf("%lf", pi);
+    printf("\n%lf", pi);
 }
 
 //aloca a memoria e define os valores de x e y utilizando ponteiros
