@@ -8,7 +8,8 @@ Se for gerado aleatoriamente N pontos dentro do quadrado, aproximadamente N * Π
 Assim, o valor do PI (Π) é então aproximado como: 
 N * Π / 4 = M 
 Π / 4 = M / N 
-Π = 4 * M / N
+Π = 4 * M / N -> PI = 4.0*circle_count/npoints
+
 Observe que quanto mais cresce o número de pontos gerados mais a aproximação do PI aumenta.
 
 
