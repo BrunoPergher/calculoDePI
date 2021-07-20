@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-#include <math.h>
 
 typedef struct{
     double x;
@@ -25,6 +24,7 @@ int main(void)
     return 0;
 }
 
+//valida pontos dentro do circuo e calculpa o valor aproximado de PI
 double calculaPi(int n)
 {
     int i, insideCircle = 0;
@@ -49,6 +49,7 @@ double calculaPi(int n)
     return (double)4 * insideCircle / n;
 }
 
+//Quantos pontos serão criados para fazer a validação e calculo
 int selecionaQuantidade()
 {
     int n;
@@ -58,16 +59,18 @@ int selecionaQuantidade()
     return n;
 }
 
+//Imprime PI
 void imprimePi(int n)
 {
     double pi = calculaPi(n);
     printf("%lf", pi);
 }
 
+//aloca a memoria e define os valores de x e y utilizando ponteiros
 ponto* gerarPonto(double n1, double n2){
     ponto *pp;
     pp = malloc(sizeof(ponto));
-    pp -> x = n1;
+    pp -> x = n1; //se criar o numero aleatório nesse método, o programa não funciona como deveria.
     pp -> y = n2;
 
     return pp;
