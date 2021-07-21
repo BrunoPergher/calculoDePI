@@ -12,6 +12,7 @@ double calculaPi(int);
 int selecionaQuantidade();
 void imprimePi(int);
 void apresentaInterface();
+double replicaCalculo(int);
 ponto* gerarPonto(double, double);
 
 int main(void)
@@ -19,8 +20,20 @@ int main(void)
     apresentaInterface();
     int n = selecionaQuantidade();
     imprimePi(n);
-
     return 0;
+}
+double replicaCalculo(int n){
+    double replica[10];
+    double totalPi;
+    int i;
+
+    for( i = 0; i < 10; i++)
+    {
+        replica[i] = calculaPi(n);
+        totalPi += replica[i];
+    }
+
+    return totalPi / 10;
 }
 
 void apresentaInterface(){
@@ -68,7 +81,7 @@ int selecionaQuantidade()
 //Imprime PI
 void imprimePi(int n)
 {
-    double pi = calculaPi(n);
+    double pi = replicaCalculo(n);
     printf("\n%lf", pi);
 }
 
